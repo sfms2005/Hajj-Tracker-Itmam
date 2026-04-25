@@ -1,0 +1,73 @@
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { getStageDetails, dayDetails } from "@/data/dayDetails";
+import DescriptionCard from "@/app/components/DescriptionCard";
+import TasksList from "@/app/components/TasksList";
+import DuasSection from "@/app/components/DuasSection";
+
+export function generateStaticParams() {
+  return dayDetails.map((d) => ({ id: String(d.id) }));
+}
+
+export default async function DayPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const stageId = Number.parseInt(id, 10);
+  if (Number.isNaN(stageId)) notFound();
+
+  const details = getStageDetails(stageId);
+  if (!details) notFound();
+
+  return (
+    <main className="pb-10">
+      <header className="px-5 pt-3 pb-4 text-center">
+        <p className="text-sm font-semibold tracking-wide text-[#1f1f1d]">
+          أنت الآن تشاهد
+        </p>
+        <h1 className="text-gold-gradient mt-1 text-4xl font-extrabold leading-tight sm:text-[42px]">
+          {details.title}
+        </h1>
+        <span
+          aria-hidden="true"
+          className="bg-gold-gradient mx-auto mt-3 block h-[2px] w-12 rounded-full"
+        />
+        <p className="mt-3 text-sm font-bold text-[#535252]">من رحلة الحج</p>
+      </header>
+
+      <div className="flex flex-col gap-5 px-5">
+        <DescriptionCard description={details.description} />
+
+        <TasksList stageId={stageId} tasks={details.tasks} />
+
+        <DuasSection duas={details.duas} />
+
+        <Link
+          href="/"
+          className="bg-dark-gradient mt-2 flex items-center justify-center gap-3 rounded-2xl px-5 py-4 text-base font-bold text-[#e6c96a] ring-1 ring-[#d1ae37]/50 shadow-[0_12px_30px_rgba(31,31,29,0.32)] transition-all hover:ring-[#d1ae37] hover:shadow-[0_16px_36px_rgba(209,174,55,0.28)]"
+        >
+          <span>العودة للصفحة الرئيسية</span>
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#d1ae37]/20 ring-1 ring-[#d1ae37]/40">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              className="h-4 w-4"
+              aria-hidden="true"
+            >
+              <path
+                d="M14 6l-6 6 6 6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+        </Link>
+      </div>
+    </main>
+  );
+}
