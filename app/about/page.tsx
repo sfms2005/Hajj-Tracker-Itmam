@@ -15,7 +15,13 @@ export default function AboutPage() {
           className="bg-gold-gradient absolute top-0 right-0 left-0 h-[2px]"
         />
         <p className="leading-relaxed text-[#535252]">
-          مبادرة مقدمة من فريق السعادة تساعدك على متابعة رحلة الحج خطوة بخطوة.
+          منصة رقمية تابعة لـ
+          <span className="text-gold-gradient font-extrabold">
+            {" "}
+            حملة قافلة الإتمام{" "}
+          </span>
+          ، مبادرة مقدمة من فريق السعادة تساعدك على متابعة رحلة الحج خطوة بخطوة
+          بسهولة وتنظيم.
         </p>
 
         <div className="mt-5 flex items-center gap-2 border-t border-[#A6A7AB]/25 pt-4">

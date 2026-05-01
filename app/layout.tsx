@@ -14,8 +14,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Qased - رحلة الحج",
-  description: "تطبيق قاصد لمتابعة رحلة الحج",
+  metadataBase: new URL("https://hajj-tracker-itmam.vercel.app"),
+  title: "رحلة الحج - حملة قافلة الإتمام",
+  description: "منصة لمتابعة رحلة الحجاج ضمن حملة قافلة الإتمام",
+  openGraph: {
+    title: "رحلة الحج - حملة قافلة الإتمام",
+    description: "تابع رحلتك في الحج مع حملة قافلة الإتمام بكل سهولة وطمأنينة",
+    url: "https://hajj-tracker-itmam.vercel.app",
+    siteName: "حملة قافلة الإتمام",
+    locale: "ar_SA",
+    type: "website",
+    images: [
+      {
+        url: "/itmam_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "حملة قافلة الإتمام",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

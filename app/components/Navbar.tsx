@@ -34,12 +34,12 @@ export default function Navbar() {
       <nav className="flex items-center justify-between px-5 py-4">
         <Link
           href="/"
-          aria-label="Qased - الصفحة الرئيسية"
+          aria-label="حملة قافلة الإتمام - الصفحة الرئيسية"
           className="mt-3 flex items-center transition-transform hover:scale-[1.02] active:scale-[0.98]"
         >
           <Image
             src="/itmam_logo.svg"
-            alt="Qased"
+            alt="حملة قافلة الإتمام"
             width={1024}
             height={1024}
             priority
