@@ -1,0 +1,67 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono, Tajawal } from "next/font/google";
+import "./globals.css";
+import Navbar from "./components/Navbar";
+
+const tajawal = Tajawal({
+  variable: "--font-tajawal",
+  subsets: ["arabic"],
+  weight: ["400", "500", "700", "800"],
+});
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "رحلة الحج - حملة قاصد",
+  description:
+    "منصة رقمية لمتابعة رحلة الحجاج ضمن حملة قاصد خطوة بخطوة بسهولة وتنظيم",
+  openGraph: {
+    title: "رحلة الحج - حملة قاصد",
+    description: "تابع رحلتك في الحج مع حملة قاصد بكل سهولة وطمأنينة",
+    url: "https://hajj-tracker-qased.vercel.app",
+    siteName: "حملة قاصد",
+    images: [
+      {
+        url: "/Alsalam-Gold.png",
+      },
+    ],
+    locale: "ar_SA",
+    type: "website",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html
+      lang="ar"
+      dir="rtl"
+      className={`${tajawal.variable} ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
+      <body className="flex min-h-full flex-col">
+        <div className="app-shell mx-auto flex w-full max-w-md flex-1 flex-col">
+          <Navbar />
+          <div className="flex-1 pt-0 sm:pt-1">{children}</div>
+          <footer
+            dir="ltr"
+            className="px-5 py-6 text-center text-[14px] font-semibold text-neutral-600"
+          >
+            Made with <span className="qs-gold-text font-bold">♡</span> by Sara
+            Fawaz Alsubaie
+          </footer>
+        </div>
+      </body>
+    </html>
+  );
+}

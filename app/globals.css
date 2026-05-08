@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #6b4a14;
+  --color-primary-soft: #8b6018;
+  --color-secondary: #c9a04a;
+  --color-secondary-soft: #e8cc7e;
+  --color-secondary-deep: #8b6018;
+  --color-bg: #faf6ed;
+  --color-bg-soft: #fbf8f0;
+  --color-surface: #ffffff;
+  --color-track: #ebe4d2;
+  --color-text: #2b2b2b;
+  --color-text-muted: #6b6b6b;
+
+  --background: var(--color-bg);
+  --foreground: var(--color-text);
+
+  --shadow-card: 0 8px 24px rgba(139, 96, 24, 0.1), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-button: 0 10px 24px rgba(107, 74, 20, 0.28);
+  --shadow-gold: 0 10px 28px rgba(201, 160, 74, 0.3);
+
+  --gradient-gold: linear-gradient(
+    135deg,
+    #b8861e 0%,
+    #c9a04a 35%,
+    #e8cc7e 55%,
+    #c9a04a 75%,
+    #8b6018 100%
+  );
+  --gradient-primary: linear-gradient(135deg, #6b4a14, #8b6018);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-tajawal), var(--font-geist-sans), ui-sans-serif,
+    system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  font-size: 17px;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  background-image: radial-gradient(
+      ellipse 80% 50% at 50% 0%,
+      rgba(232, 204, 126, 0.18),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 50% 100%,
+      rgba(201, 160, 74, 0.06),
+      transparent 70%
+    ),
+    linear-gradient(to bottom, var(--color-bg-soft), #ffffff);
+  background-attachment: fixed;
+  font-family: var(--font-tajawal), var(--font-geist-sans), "Noto Kufi Arabic",
+    Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/** يصغّر الواجهة بالكامل (نص، دوائر، صور) بحوالي 15% أي إلى 85% من الحجم. */
+.app-shell {
+  zoom: 0.85;
+}
+
+@layer components {
+  .qs-card {
+    background-color: var(--color-surface);
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+    padding: 18px;
+    border: 1px solid rgba(201, 160, 74, 0.08);
+  }
+
+  .qs-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border-radius: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    background-image: var(--gradient-primary);
+    box-shadow: var(--shadow-button);
+    transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+  }
+  .qs-btn-primary:hover {
+    filter: brightness(1.08);
+  }
+  .qs-btn-primary:active {
+    transform: scale(0.99);
+  }
+
+  .qs-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border-radius: 16px;
+    font-weight: 700;
+    color: var(--color-primary);
+    background-color: transparent;
+    border: 1px solid var(--color-secondary);
+    transition: background-color 0.15s ease, transform 0.15s ease;
+  }
+  .qs-btn-secondary:hover {
+    background-color: rgba(201, 160, 74, 0.1);
+  }
+  .qs-btn-secondary:active {
+    transform: scale(0.99);
+  }
+
+  .qs-heading {
+    color: var(--color-primary);
+    font-weight: 800;
+  }
+
+  .qs-accent {
+    color: var(--color-secondary);
+  }
+
+  .qs-gold-bar {
+    display: inline-block;
+    height: 3px;
+    width: 64px;
+    border-radius: 999px;
+    background-image: linear-gradient(
+      90deg,
+      transparent,
+      #8b6018,
+      #c9a04a,
+      #e8cc7e,
+      #c9a04a,
+      #8b6018,
+      transparent
+    );
+  }
+
+  .qs-gold-text {
+    background-image: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .qs-gold-underline {
+    background-image: linear-gradient(
+      90deg,
+      transparent,
+      #c9a04a 15%,
+      #e8cc7e 50%,
+      #c9a04a 85%,
+      transparent
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 3px;
+    background-position: 0 100%;
+  }
+
+  .qs-progress-fill {
+    background-image: linear-gradient(
+      90deg,
+      #b8861e,
+      #c9a04a 40%,
+      #e8cc7e 60%,
+      #c9a04a 80%,
+      #b8861e
+    );
+    background-size: 200% 100%;
+    box-shadow: 0 0 10px rgba(201, 160, 74, 0.45);
+  }
+}
