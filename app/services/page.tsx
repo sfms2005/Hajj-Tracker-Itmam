@@ -1,9 +1,9 @@
 import { getServicesRows } from "@/data/services";
 
 export const metadata = {
-  title: "خدماتنا - حملة قاصد المشاعر",
+  title: "خدماتنا - شركة قافلة الإتمام للحج",
   description:
-    "خدمات النقل والسكن والإشراف الميداني وخدمة الحاج على مدار الساعة وغيرها من خدمات قاصد المشاعر.",
+    "خدمات النقل والسكن والإشراف الميداني وخدمة الحاج على مدار الساعة وغيرها من خدمات شركة قافلة الإتمام للحج.",
 };
 
 export default function ServicesPage() {
@@ -15,11 +15,15 @@ export default function ServicesPage() {
         className="pointer-events-none absolute left-1/2 top-[46%] z-0 -translate-x-1/2 -translate-y-1/2"
         aria-hidden="true"
       >
-        <div className="h-[min(88vw,24rem)] w-[min(88vw,24rem)] rotate-45 rounded-[2.75rem] bg-[#ebe4d2]/40" />
+        <div className="h-[min(88vw,24rem)] w-[min(88vw,24rem)] rotate-45 rounded-[2.75rem] bg-[linear-gradient(135deg,rgba(201,160,74,0.16),rgba(216,214,208,0.22))]" />
       </div>
+      <div
+        className="pointer-events-none absolute -top-10 right-0 z-0 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(201,160,74,0.18),transparent_70%)]"
+        aria-hidden="true"
+      />
 
       <div className="relative z-10 mx-auto max-w-2xl text-right">
-        <h1 className="inline-block border-b-[3px] border-[#c9a04a] pb-1 text-[2.25rem] font-extrabold leading-tight tracking-tight text-[#6b4a14] sm:text-5xl">
+        <h1 className="inline-block border-b-[3px] border-[#c9a04a] pb-1 text-[2.25rem] font-extrabold leading-tight tracking-tight text-[#1a1612] sm:text-5xl">
           خدماتنا
         </h1>
 
@@ -55,10 +59,10 @@ export default function ServicesPage() {
 function ServiceCard({ label }: { label: string }) {
   return (
     <div className="flex flex-col items-center gap-3 text-center sm:gap-3.5">
-      <span className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#6b4a14] text-white shadow-[0_6px_16px_rgba(107,74,20,0.22)] sm:h-14 sm:w-14">
+      <span className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[linear-gradient(135deg,#0d0b09,#1a1612_50%,#2a241e)] text-[#f0d175] shadow-[0_8px_20px_rgba(13,11,9,0.32),inset_0_0_0_1px_rgba(201,160,74,0.4)] sm:h-14 sm:w-14">
         <CheckIcon />
       </span>
-      <span className="text-[15px] font-semibold leading-snug text-[#2b2b2b] sm:text-[1rem]">
+      <span className="text-[15px] font-semibold leading-snug text-[#1a1612] sm:text-[1rem]">
         {label}
       </span>
     </div>

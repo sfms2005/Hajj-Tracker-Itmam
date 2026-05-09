@@ -27,10 +27,10 @@ export default async function DayPage({
         <p className="text-sm font-semibold text-neutral-600">
           أنت الآن تشاهد
         </p>
-        <h1 className="mt-1 qs-gold-underline inline-block pb-2 text-2xl font-extrabold leading-tight text-[#6b4a14] sm:text-3xl">
+        <h1 className="mt-1 qs-gold-underline inline-block pb-2 text-2xl font-extrabold leading-tight text-[#1a1612] sm:text-3xl">
           {details.title}
         </h1>
-        <p className="mt-2 text-sm font-bold text-neutral-700">
+        <p className="mt-2 text-sm font-bold text-[#1a1612]/75">
           من رحلة الحج
         </p>
       </header>
@@ -44,10 +44,10 @@ export default async function DayPage({
 
         <Link
           href="/"
-          className="mt-2 flex items-center justify-center gap-3 rounded-2xl bg-[linear-gradient(135deg,#6b4a14,#8b6018)] px-5 py-4 text-base font-bold text-white shadow-[0_10px_24px_rgba(107,74,20,0.18)] transition-all hover:brightness-110 active:scale-[0.99]"
+          className="mt-2 flex items-center justify-center gap-3 rounded-2xl bg-[linear-gradient(135deg,#0d0b09,#1a1612_50%,#2a241e)] px-5 py-4 text-base font-bold text-[#f7f1e0] shadow-[0_12px_28px_rgba(13,11,9,0.35),inset_0_0_0_1px_rgba(201,160,74,0.28)] transition-all hover:brightness-115 active:scale-[0.99]"
         >
           <span>العودة للصفحة الرئيسية</span>
-          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/15">
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#c9a04a]/20 ring-1 ring-[#c9a04a]/40">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

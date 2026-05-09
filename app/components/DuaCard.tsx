@@ -33,8 +33,8 @@ export default function DuaCard({ text }: Props) {
   };
 
   return (
-    <article className="flex items-start justify-between gap-3 rounded-2xl bg-white px-4 py-4 shadow-[0_8px_20px_rgba(0,0,0,0.05)]">
-      <p className="flex-1 text-[15px] font-semibold leading-relaxed text-[#2b2b2b]">
+    <article className="flex items-start justify-between gap-3 rounded-2xl border border-[#c9a04a]/15 bg-white px-4 py-4 shadow-[0_8px_24px_rgba(26,22,18,0.06),0_1px_3px_rgba(0,0,0,0.04)]">
+      <p className="flex-1 text-[15px] font-semibold leading-relaxed text-[#1a1612]">
         {text}
       </p>
 
@@ -44,8 +44,8 @@ export default function DuaCard({ text }: Props) {
         aria-label={copied ? "تم النسخ" : "نسخ الدعاء"}
         className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border transition-all ${
           copied
-            ? "border-transparent bg-[linear-gradient(135deg,#6b4a14,#8b6018)] text-white"
-            : "border-[#c9a04a] bg-transparent text-[#6b4a14] hover:bg-[#c9a04a]/10 active:scale-95"
+            ? "border-transparent bg-[linear-gradient(135deg,#0d0b09,#1a1612,#2a241e)] text-[#f0d175] shadow-[inset_0_0_0_1px_rgba(201,160,74,0.4)]"
+            : "border-[#c9a04a] bg-transparent text-[#1a1612] hover:bg-[#c9a04a]/12 active:scale-95"
         }`}
       >
         {copied ? <CheckIcon /> : <CopyIcon />}

@@ -1,16 +1,15 @@
 import Button from "../components/Button";
 
 export const metadata = {
-  title: "تواصلوا معنا - شركة السلام المتحدة",
+  title: "تواصلوا معنا - شركة قافلة الإتمام للحج",
   description:
-    "الموقع الرسمي، الهاتف، البريد الإلكتروني، وحساب شركة السلام على منصة X.",
+    "الموقع الرسمي، الهاتف، البريد الإلكتروني، وحساب شركة قافلة الإتمام للحج على منصة X.",
 };
 
-const X_PROFILE = "https://x.com/alsalam_hajj";
-const OFFICIAL_WEBSITE = "https://alsalamhajj.com/";
-const PHONE_DISPLAY = "0590090243";
-const PHONE_TEL = "+966590090243";
-const EMAIL = "alsalam47@outlook.sa";
+const X_PROFILE = "https://x.com/itmamm3";
+const PHONE_DISPLAY = "0505269498";
+const PHONE_TEL = "+966505269498";
+const EMAIL = "itmam4haj@gmail.com";
 
 export default function ContactPage() {
   return (
@@ -19,17 +18,21 @@ export default function ContactPage() {
         className="pointer-events-none absolute left-1/2 top-[42%] z-0 -translate-x-1/2 -translate-y-1/2"
         aria-hidden="true"
       >
-        <div className="h-[min(78vw,22rem)] w-[min(78vw,22rem)] rotate-45 rounded-[2.75rem] bg-[#ebe4d2]/40" />
+        <div className="h-[min(78vw,22rem)] w-[min(78vw,22rem)] rotate-45 rounded-[2.75rem] bg-[linear-gradient(135deg,rgba(201,160,74,0.18),rgba(216,214,208,0.22))]" />
       </div>
+      <div
+        className="pointer-events-none absolute -top-10 right-0 z-0 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(201,160,74,0.18),transparent_70%)]"
+        aria-hidden="true"
+      />
 
       <div className="relative z-10 mx-auto max-w-lg text-right">
-        <h1 className="inline-block border-b-[3px] border-[#c9a04a] pb-1 text-[2.25rem] font-extrabold leading-tight tracking-tight text-[#6b4a14] sm:text-5xl">
+        <h1 className="inline-block border-b-[3px] border-[#c9a04a] pb-1 text-[2.25rem] font-extrabold leading-tight tracking-tight text-[#1a1612] sm:text-5xl">
           تواصلوا معنا
         </h1>
 
-        <p className="mt-10 text-[17px] font-medium leading-[2.05] text-[#2b2b2b] sm:text-[1.125rem] sm:leading-[2.1]">
-          للاستفسارات والتواصل المتعلق بخدمات حجاج الداخل وشركة السلام المتحدة،
-          اختر الوسيلة المناسبة أدناه.
+        <p className="mt-10 text-[17px] font-medium leading-[2.05] text-[#1a1612] sm:text-[1.125rem] sm:leading-[2.1]">
+          للاستفسارات والتواصل المتعلق بخدمات حجاج الداخل وشركة قافلة الإتمام
+          للحج، اختر الوسيلة المناسبة أدناه.
         </p>
 
         <section
@@ -63,21 +66,12 @@ export default function ContactPage() {
           </Button>
 
           <Button
-            href={OFFICIAL_WEBSITE}
-            variant="primary"
-            external
-            icon={<GlobeIcon />}
-          >
-            الموقع الرسمي
-          </Button>
-
-          <Button
             href={X_PROFILE}
             variant="primary"
             external
             icon={<XIcon />}
           >
-            حساب السلام على
+            حساب الإتمام على
           </Button>
         </section>
       </div>
@@ -118,25 +112,6 @@ function MailIcon() {
     >
       <rect width="20" height="16" x="2" y="4" rx="2" />
       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-    </svg>
-  );
-}
-
-function GlobeIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="h-5 w-5 shrink-0"
-      aria-hidden="true"
-    >
-      <circle cx="12" cy="12" r="10" />
-      <path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" />
     </svg>
   );
 }

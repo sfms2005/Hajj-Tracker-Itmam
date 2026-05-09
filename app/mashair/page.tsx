@@ -3,7 +3,7 @@ import Button from "../components/Button";
 import { mashairPlaces } from "@/data/mashair";
 
 export const metadata = {
-  title: "مواقع المشاعر - حملة قاصد",
+  title: "مواقع المشاعر - شركة قافلة الإتمام للحج",
   description: "روابط مواقع منى وعرفة ومزدلفة على خرائط جوجل",
 };
 
@@ -12,14 +12,14 @@ export default function MashairPage() {
     <main className="px-5 pb-10 pt-0">
       <Link
         href="/"
-        className="inline-flex items-center gap-2 rounded-xl px-2 py-2 text-sm font-bold text-[#6b4a14] transition-colors hover:bg-[#6b4a14]/5"
+        className="inline-flex items-center gap-2 rounded-xl px-2 py-2 text-sm font-bold text-[#1a1612] transition-colors hover:bg-[#1a1612]/5"
       >
         <ArrowRightIcon />
         <span>الصفحة الرئيسية</span>
       </Link>
 
       <header className="mt-2 text-center">
-        <h1 className="qs-gold-underline inline-block pb-2 text-3xl font-extrabold leading-tight text-[#6b4a14] sm:text-[2rem]">
+        <h1 className="qs-gold-underline inline-block pb-2 text-3xl font-extrabold leading-tight text-[#1a1612] sm:text-[2rem]">
           مواقع المشاعر
         </h1>
         <p className="mt-2 text-sm font-semibold text-neutral-600">
@@ -30,8 +30,12 @@ export default function MashairPage() {
       <ul className="mt-8 flex flex-col gap-5">
         {mashairPlaces.map((place) => (
           <li key={place.id}>
-            <article className="flex flex-col gap-4 rounded-2xl bg-white px-5 py-5 shadow-[0_8px_20px_rgba(0,0,0,0.05)]">
-              <h2 className="text-center text-xl font-extrabold text-[#6b4a14]">
+            <article className="relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-[#c9a04a]/20 bg-white px-5 py-5 shadow-[0_8px_24px_rgba(26,22,18,0.06),0_1px_3px_rgba(0,0,0,0.04)]">
+              <span
+                aria-hidden="true"
+                className="absolute inset-x-5 top-0 h-[2px] bg-[linear-gradient(90deg,transparent,#c9a04a,transparent)]"
+              />
+              <h2 className="text-center text-xl font-extrabold text-[#1a1612]">
                 {place.nameAr}
               </h2>
               <Button href={place.mapsUrl} variant="primary" external>

@@ -25,7 +25,7 @@ export default function ScrollToTopButton() {
       onClick={scrollToTop}
       aria-label="العودة لأعلى الصفحة"
       tabIndex={visible ? 0 : -1}
-      className={`fixed bottom-6 left-6 z-30 flex h-12 w-12 items-center justify-center rounded-full bg-[linear-gradient(135deg,#6b4a14,#8b6018)] text-white shadow-[0_10px_24px_rgba(107,74,20,0.25)] transition-all duration-300 hover:brightness-110 active:scale-95 ${
+      className={`fixed bottom-6 left-6 z-30 flex h-12 w-12 items-center justify-center rounded-full bg-[linear-gradient(135deg,#0d0b09,#1a1612_50%,#2a241e)] text-[#f0d175] shadow-[0_12px_28px_rgba(13,11,9,0.4),inset_0_0_0_1px_rgba(201,160,74,0.35)] transition-all duration-300 hover:brightness-115 active:scale-95 ${
         visible
           ? "translate-y-0 opacity-100"
           : "pointer-events-none translate-y-4 opacity-0"

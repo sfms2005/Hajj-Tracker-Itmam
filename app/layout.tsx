@@ -20,17 +20,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "رحلة الحج - حملة قاصد",
+  title: "رحلة الحج - شركة قافلة الإتمام للحج",
   description:
-    "منصة رقمية لمتابعة رحلة الحجاج ضمن حملة قاصد خطوة بخطوة بسهولة وتنظيم",
+    "منصة رقمية لمتابعة رحلة الحجاج مع شركة قافلة الإتمام للحج خطوة بخطوة بسهولة وتنظيم",
   openGraph: {
-    title: "رحلة الحج - حملة قاصد",
-    description: "تابع رحلتك في الحج مع حملة قاصد بكل سهولة وطمأنينة",
+    title: "رحلة الحج - شركة قافلة الإتمام للحج",
+    description:
+      "تابع رحلتك في الحج مع شركة قافلة الإتمام للحج بكل سهولة وطمأنينة",
     url: "https://hajj-tracker-qased.vercel.app",
-    siteName: "حملة قاصد",
+    siteName: "شركة قافلة الإتمام للحج",
     images: [
       {
-        url: "/Alsalam-Gold.png",
+        url: "/Itmam.png",
       },
     ],
     locale: "ar_SA",
@@ -55,8 +56,12 @@ export default function RootLayout({
           <div className="flex-1 pt-0 sm:pt-1">{children}</div>
           <footer
             dir="ltr"
-            className="px-5 py-6 text-center text-[14px] font-semibold text-neutral-600"
+            className="relative px-5 py-6 text-center text-[14px] font-semibold text-neutral-600"
           >
+            <span
+              aria-hidden="true"
+              className="absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(201,160,74,0.4),transparent)]"
+            />
             Made with <span className="qs-gold-text font-bold">♡</span> by Sara
             Fawaz Alsubaie
           </footer>

@@ -43,7 +43,7 @@ export default function TasksList({ stageId, tasks }: Props) {
   };
 
   return (
-    <ul className="overflow-hidden rounded-2xl bg-white shadow-[0_8px_20px_rgba(0,0,0,0.05)]">
+    <ul className="overflow-hidden rounded-2xl border border-[#c9a04a]/15 bg-white shadow-[0_8px_24px_rgba(26,22,18,0.06),0_1px_3px_rgba(0,0,0,0.04)]">
       {tasks.map((task, i) => {
         const isChecked = checked[i];
         return (
@@ -55,7 +55,7 @@ export default function TasksList({ stageId, tasks }: Props) {
               className={`flex-1 text-right text-[14px] font-semibold transition-colors duration-200 ${
                 isChecked
                   ? "text-neutral-400 line-through"
-                  : "text-[#2b2b2b]"
+                  : "text-[#1a1612]"
               }`}
             >
               {task}
@@ -69,14 +69,14 @@ export default function TasksList({ stageId, tasks }: Props) {
               onClick={() => toggle(i)}
               className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-md border-2 transition-all duration-200 active:scale-90 ${
                 isChecked
-                  ? "scale-105 border-transparent bg-[linear-gradient(135deg,#6b4a14,#8b6018)]"
-                  : "border-[#c9a04a] bg-white hover:bg-[#c9a04a]/10"
+                  ? "scale-105 border-transparent bg-[linear-gradient(135deg,#0d0b09,#1a1612,#2a241e)] shadow-[inset_0_0_0_1px_rgba(201,160,74,0.45)]"
+                  : "border-[#c9a04a] bg-white hover:bg-[#c9a04a]/12"
               }`}
             >
               <svg
                 viewBox="0 0 20 20"
                 fill="none"
-                stroke="white"
+                stroke="#f0d175"
                 strokeWidth="3"
                 className={`h-4 w-4 transition-all duration-200 ${
                   isChecked ? "scale-100 opacity-100" : "scale-50 opacity-0"

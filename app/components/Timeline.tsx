@@ -31,11 +31,25 @@ export default function Timeline({ currentStageId }: Props) {
         fill="none"
         aria-hidden="true"
       >
+        <defs>
+          <linearGradient
+            id="timeline-path-gradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
+            <stop offset="0%" stopColor="#a07628" />
+            <stop offset="50%" stopColor="#c9a04a" />
+            <stop offset="100%" stopColor="#a07628" />
+          </linearGradient>
+        </defs>
         <g
-          stroke="#6b4a14"
+          stroke="url(#timeline-path-gradient)"
           strokeWidth="2.5"
           strokeLinecap="round"
           fill="none"
+          opacity="0.85"
         >
           <path d="M 280 80 C 220 68, 140 68, 80 80" />
           <path d="M 80 80 C 40 140, 40 190, 80 250" />
@@ -82,7 +96,7 @@ function HereIndicator({ side }: { side: "left" | "right" }) {
         ...(isRight ? { right: "-58px" } : { left: "-58px" }),
       }}
     >
-      <span className="block whitespace-nowrap rounded-lg bg-[linear-gradient(135deg,#6b4a14,#8b6018)] px-3 py-1 text-[12px] font-bold text-white shadow-[0_8px_20px_rgba(0,0,0,0.05)]">
+      <span className="block whitespace-nowrap rounded-lg bg-[linear-gradient(135deg,#0d0b09,#1a1612,#2a241e)] px-3 py-1 text-[12px] font-bold text-[#f0d175] shadow-[0_10px_24px_rgba(13,11,9,0.32),inset_0_0_0_1px_rgba(201,160,74,0.35)]">
         أنت هنا
       </span>
       <svg
@@ -97,7 +111,7 @@ function HereIndicator({ side }: { side: "left" | "right" }) {
         }}
         aria-hidden="true"
       >
-        <g stroke="#6b4a14" strokeWidth="2" strokeLinecap="round" fill="none">
+        <g stroke="#1a1612" strokeWidth="2" strokeLinecap="round" fill="none">
           {isRight ? (
             <>
               <path d="M 40 4 C 34 14, 22 26, 10 34" strokeDasharray="3 4" />

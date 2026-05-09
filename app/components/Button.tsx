@@ -32,9 +32,9 @@ type Props = LinkProps | ButtonProps;
 
 const variantStyles: Record<Variant, string> = {
   primary:
-    "text-white bg-[linear-gradient(135deg,#6b4a14,#8b6018)] shadow-[0_10px_24px_rgba(107,74,20,0.18)] hover:brightness-110 active:scale-[0.99]",
+    "text-[#f7f1e0] bg-[linear-gradient(135deg,#0d0b09,#1a1612_50%,#2a241e)] shadow-[0_12px_28px_rgba(13,11,9,0.35),inset_0_0_0_1px_rgba(201,160,74,0.28)] hover:brightness-115 hover:shadow-[0_14px_32px_rgba(13,11,9,0.42),inset_0_0_0_1px_rgba(232,204,126,0.5)] active:scale-[0.99]",
   secondary:
-    "bg-transparent text-[#6b4a14] border border-[#c9a04a] hover:bg-[#c9a04a]/10 active:scale-[0.99]",
+    "bg-white/40 text-[#1a1612] border border-[#c9a04a] backdrop-blur-sm hover:bg-[#c9a04a]/12 hover:border-[#a07628] active:scale-[0.99]",
 };
 
 export default function Button(props: Props) {
