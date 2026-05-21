@@ -38,6 +38,12 @@ export default async function DayPage({
       <div className="flex flex-col gap-5 px-5">
         <DescriptionCard description={details.description} />
 
+        {details.introNote && (
+          <p className="rounded-2xl border border-dashed border-[#c9a04a]/40 bg-[#fbf6e8] px-4 py-3 text-center text-[14px] font-bold leading-relaxed text-[#1a1612]">
+            {details.introNote}
+          </p>
+        )}
+
         <TasksList stageId={stageId} tasks={details.tasks} />
 
         <DuasSection duas={details.duas} />
