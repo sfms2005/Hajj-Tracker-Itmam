@@ -1,22 +1,24 @@
 "use client";
 
 import { useState } from "react";
+import type { DuaItem } from "@/data/duas";
+import DuaSourceDetails from "./DuaSourceDetails";
 
 interface Props {
-  text: string;
+  dua: DuaItem;
 }
 
-export default function DuaCard({ text }: Props) {
+export default function DuaCard({ dua }: Props) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(text);
+      await navigator.clipboard.writeText(dua.text);
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     } catch {
       const textarea = document.createElement("textarea");
-      textarea.value = text;
+      textarea.value = dua.text;
       textarea.style.position = "fixed";
       textarea.style.opacity = "0";
       document.body.appendChild(textarea);
@@ -33,10 +35,21 @@ export default function DuaCard({ text }: Props) {
   };
 
   return (
-    <article className="flex items-start justify-between gap-3 rounded-2xl border border-[#c9a04a]/15 bg-white px-4 py-4 shadow-[0_8px_24px_rgba(26,22,18,0.06),0_1px_3px_rgba(0,0,0,0.04)]">
-      <p className="flex-1 text-[15px] font-semibold leading-relaxed text-[#1a1612]">
-        {text}
-      </p>
+    <article
+      dir="rtl"
+      className="flex items-start justify-between gap-3 rounded-2xl border border-[#c9a04a]/15 bg-white px-4 py-4 shadow-[0_8px_24px_rgba(26,22,18,0.06),0_1px_3px_rgba(0,0,0,0.04)]"
+    >
+      <div className="min-w-0 flex-1 text-right">
+        <p className="text-[16px] font-bold leading-[1.85] text-[#1a1612]">
+          {dua.text}
+        </p>
+        {dua.hint && (
+          <p className="mt-2 text-[11px] font-semibold leading-relaxed text-[#a07628]/80">
+            {dua.hint}
+          </p>
+        )}
+        {dua.source && <DuaSourceDetails source={dua.source} />}
+      </div>
 
       <button
         type="button"

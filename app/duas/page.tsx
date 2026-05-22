@@ -6,7 +6,8 @@ import { duaCategories } from "@/data/duas";
 
 export const metadata = {
   title: "أدعيتي - شركة قافلة الإتمام للحج",
-  description: "مجموعة من الأدعية المختارة لرحلة الحج والحياة اليومية",
+  description:
+    "أدعية من القرآن الكريم والسنة النبوية والتعوذات ودعاء الصحابة رضي الله عنهم",
 };
 
 export default function DuasPage() {
@@ -51,7 +52,7 @@ export default function DuasPage() {
 
             <div className="flex flex-col gap-2.5">
               {category.duas.map((dua, i) => (
-                <DuaCard key={i} text={dua} />
+                <DuaCard key={i} dua={dua} />
               ))}
             </div>
           </section>
