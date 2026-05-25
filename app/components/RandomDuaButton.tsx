@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import type { DuaCategory, DuaItem } from "@/data/duas";
-import DuaSourceDetails from "./DuaSourceDetails";
 
 interface Props {
   categories: DuaCategory[];
@@ -85,7 +84,7 @@ export default function RandomDuaButton({ categories }: Props) {
         className="flex w-full items-center justify-center gap-3 rounded-2xl border border-dashed border-[#c9a04a] bg-white px-5 py-4 text-base font-bold text-[#1a1612] shadow-[0_8px_24px_rgba(26,22,18,0.06),0_1px_3px_rgba(0,0,0,0.04)] transition-all hover:border-[#a07628] hover:bg-[#c9a04a]/12 active:scale-[0.99]"
       >
         <SparkleIcon />
-        <span>دعاء مسنونًا عشوائيًا</span>
+        <span>دعاء عشوائي</span>
       </button>
 
       <button
@@ -102,7 +101,7 @@ export default function RandomDuaButton({ categories }: Props) {
         role="dialog"
         aria-modal="true"
         aria-hidden={!isOpen}
-        aria-label="دعاء مسنونًا عشوائيًا"
+        aria-label="دعاء عشوائي"
         className={`fixed inset-x-0 bottom-0 z-50 mx-auto flex max-w-md flex-col items-stretch px-4 pb-6 transition-all duration-300 ${
           isOpen
             ? "translate-y-0 opacity-100"
@@ -125,7 +124,7 @@ export default function RandomDuaButton({ categories }: Props) {
             </button>
             <h2 className="flex items-center gap-2 text-base font-extrabold qs-gold-text">
               <SparkleIcon />
-              <span>دعاء مسنونًا عشوائيًا</span>
+              <span>دعاء عشوائي</span>
             </h2>
           </div>
 
@@ -153,9 +152,6 @@ export default function RandomDuaButton({ categories }: Props) {
                 <p className="mt-2 text-center text-[11px] font-semibold text-[#a07628]/80">
                   {current.dua.hint}
                 </p>
-              )}
-              {current?.dua.source && (
-                <DuaSourceDetails source={current.dua.source} />
               )}
               <span
                 aria-hidden="true"

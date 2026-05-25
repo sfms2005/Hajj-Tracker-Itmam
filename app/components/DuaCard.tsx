@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import type { DuaItem } from "@/data/duas";
-import DuaSourceDetails from "./DuaSourceDetails";
 
 interface Props {
   dua: DuaItem;
@@ -48,7 +47,6 @@ export default function DuaCard({ dua }: Props) {
             {dua.hint}
           </p>
         )}
-        {dua.source && <DuaSourceDetails source={dua.source} />}
       </div>
 
       <button

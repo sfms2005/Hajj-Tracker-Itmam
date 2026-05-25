@@ -1,3 +1,5 @@
+"use client";
+
 import ProgressCard from "./components/ProgressCard";
 import MotivationCard from "./components/MotivationCard";
 import Timeline from "./components/Timeline";
@@ -11,10 +13,14 @@ export default function Home() {
   return (
     <main className="pb-10">
       <header className="px-5 pt-0 pb-2 text-center">
-        <p className="text-sm font-semibold text-neutral-600">أنت الآن في</p>
+        <p className="text-sm font-semibold text-neutral-600">
+          أنت الآن في
+        </p>
+
         <h1 className="mt-1 qs-gold-underline inline-block pb-2 text-2xl font-extrabold leading-tight text-[#1a1612] sm:text-3xl">
           {currentDay.title}
         </h1>
+
         <p className="mt-2 text-sm font-bold text-[#1a1612]/75">
           من رحلة الحج
         </p>
@@ -28,10 +34,19 @@ export default function Home() {
         <Timeline currentStageId={currentStageId} />
 
         <div className="flex flex-col gap-3">
-          <Button href="/duas" variant="secondary" icon={<HeartIcon />}>
+          <Button
+            href="/duas"
+            variant="secondary"
+            icon={<HeartIcon />}
+          >
             أدعيتي
           </Button>
-          <Button href="/mashair" variant="primary" icon={<MapPinIcon />}>
+
+          <Button
+            href="/mashair"
+            variant="primary"
+            icon={<MapPinIcon />}
+          >
             مواقع المشاعر
           </Button>
         </div>
